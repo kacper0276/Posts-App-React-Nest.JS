@@ -1,0 +1,11 @@
+.main_dark {
+  background: var(--main-background-color-dark);
+  color: var(--main-text-color-light);
+  min-height: 100vh;
+}
+
+.main_light {
+  background: var(--main-background-color-light);
+  color: var(--main-text-color-dark);
+  min-height: 100vh;
+}

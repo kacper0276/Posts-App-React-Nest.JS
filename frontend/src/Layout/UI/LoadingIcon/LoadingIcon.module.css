@@ -1,0 +1,62 @@
+.main_div {
+  width: 100px;
+  height: 100px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: brown;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 1.5s infinite linear;
+}
+
+.dark_circle {
+  width: 80px;
+  height: 80px;
+  background: var(--main-background-color-dark);
+  border-radius: 100%;
+  position: relative;
+}
+
+.dark_circle::after {
+  content: "";
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  background: var(--main-background-color-dark);
+  right: 0;
+  top: 0;
+  transform: rotate(40deg) translateY(-15px);
+}
+
+.light_circle {
+  width: 80px;
+  height: 80px;
+  background: var(--main-background-color-light);
+  border-radius: 100%;
+  position: relative;
+}
+
+.light_circle::after {
+  content: "";
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  background: var(--main-background-color-light);
+  right: 0;
+  top: 0;
+  transform: rotate(40deg) translateY(-15px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

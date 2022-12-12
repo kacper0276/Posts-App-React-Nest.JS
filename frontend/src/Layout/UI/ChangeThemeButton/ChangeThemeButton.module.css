@@ -1,0 +1,12 @@
+.change_theme {
+  height: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+.change_theme > button {
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 13px;
+}

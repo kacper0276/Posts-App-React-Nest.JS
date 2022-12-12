@@ -1,0 +1,23 @@
+.button_div {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .button_div {
+    float: left;
+    height: 50px;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+  }
+
+  .button_div > button {
+    height: 80%;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 13px;
+    background: transparent;
+  }
+}
