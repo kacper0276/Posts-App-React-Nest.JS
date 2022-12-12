@@ -12,6 +12,7 @@ import ChangeThemeButton from "./Layout/UI/ChangeThemeButton/ChangeThemeButton";
 import ShowMenuMobileButton from "./Layout/UI/ShowMenuMobileButton/ShowMenuMobileButton";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import Notes from "./pages/Notes/Notes";
 
 // Exported default variables
 export const api_url = `http://localhost:3002/api`;
@@ -32,6 +33,7 @@ function App() {
       <Route path="/" exact element={<MainPage />} />
       <Route path="/zaloguj" exact element={<LoginPage />} />
       <Route path="/zarejestruj" exact element={<RegisterPage />} />
+      <Route path="/notatki" exact element={<Notes />} />
     </Routes>
   );
 
