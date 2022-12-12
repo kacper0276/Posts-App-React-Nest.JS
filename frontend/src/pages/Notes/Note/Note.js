@@ -10,8 +10,8 @@ export default function Note(props) {
         <p>Lorem</p>
       </div>
       <div className={`${styles.buttons}`}>
-        <button>Gotowe</button>
-        <button>Usuń</button>
+        <button className={`${styles.done_button}`}>Gotowe</button>
+        <button className={`${styles.delete_button}`}>Usuń</button>
       </div>
     </div>
   );

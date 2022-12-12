@@ -1,0 +1,8 @@
+.main_div {
+  width: 100%;
+  min-height: 88vh;
+  clear: both;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

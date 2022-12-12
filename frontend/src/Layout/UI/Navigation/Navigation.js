@@ -43,6 +43,9 @@ export default function Navigation() {
         <li>
           <Link to={"/zarejestruj"}>Zarejestruj się</Link>
         </li>
+        <li>
+          <Link to={"/notatki"}>Twoje notatki</Link>
+        </li>
       </ul>
     </nav>
   );
