@@ -4,10 +4,10 @@ export default function Note(props) {
   return (
     <div className={`${styles.main_div_note}`}>
       <div className={`${styles.title_notes}`}>
-        <strong>Tytuł notatki</strong>
+        <strong>{props.title}</strong>
       </div>
       <div className={`${styles.description_notes}`}>
-        <p>Lorem</p>
+        <p>{props.description}</p>
       </div>
       <div className={`${styles.buttons}`}>
         <button className={`${styles.done_button}`}>Gotowe</button>
