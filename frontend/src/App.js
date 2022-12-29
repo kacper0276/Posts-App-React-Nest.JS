@@ -13,6 +13,8 @@ import ShowMenuMobileButton from "./Layout/UI/ShowMenuMobileButton/ShowMenuMobil
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Notes from "./pages/Notes/Notes";
+import AuthenticatedRoute from "./hok/AuthenticatedRoute";
+import AddNote from "./pages/AddNote/AddNote";
 
 // Exported default variables
 export const api_url = `http://localhost:3002/api`;
@@ -33,7 +35,24 @@ function App() {
       <Route path="/" exact element={<MainPage />} />
       <Route path="/zaloguj" exact element={<LoginPage />} />
       <Route path="/zarejestruj" exact element={<RegisterPage />} />
-      <Route path="/notatki" exact element={<Notes />} />
+      <Route
+        path="/notatki"
+        exact
+        element={
+          <AuthenticatedRoute>
+            <Notes />
+          </AuthenticatedRoute>
+        }
+      />
+      <Route
+        path="/dodajnotatki"
+        exact
+        element={
+          <AuthenticatedRoute>
+            <AddNote />
+          </AuthenticatedRoute>
+        }
+      />
     </Routes>
   );
 

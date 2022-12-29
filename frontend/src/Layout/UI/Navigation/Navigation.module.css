@@ -30,6 +30,8 @@ nav > ul {
   flex-direction: row;
 }
 
+/* Mobile menu */
+
 @media only screen and (max-width: 1000px) {
   .nav {
     position: absolute;
@@ -56,6 +58,7 @@ nav > ul {
 
   .hide_button > button {
     background: transparent;
+    cursor: pointer;
   }
 
   .nav > ul {

@@ -1,0 +1,80 @@
+/* Main div */
+.main_div {
+  width: 100%;
+  min-height: 88vh;
+  clear: both;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.arrow {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+}
+
+/* Form */
+.main_div > form {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  animation: pulseBorder 3s infinite linear;
+}
+
+/* Input style*/
+.main_div > form > input[type="text"]:first-child {
+  margin: 20px 0px;
+}
+
+.main_div > form > input[type="text"] {
+  outline: none;
+  width: 75%;
+  background: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+::placeholder {
+  color: black;
+}
+
+/* Button */
+.add_button {
+  width: 50%;
+  padding: 15px;
+  border-radius: 5px;
+  background: var(--success-color-button);
+  margin-top: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Animation */
+
+@keyframes pulseBorder {
+  50% {
+    border-color: rgba(255, 255, 255, 0);
+  }
+}
+
+/* Succes add note div */
+.success_add_note {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  bottom: 15%;
+  left: 17%;
+  border-radius: 5px;
+  background: var(--success-color-button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

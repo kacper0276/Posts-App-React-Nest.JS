@@ -8,10 +8,59 @@
 }
 
 /* Form */
-.main_div > form {
-  width: 20%;
+.main_div > .form_div > form {
+  height: 100%;
+  padding: 15px;
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    rgba(211, 211, 211, 1) 0%,
+    rgba(52, 45, 45, 1) 100%
+  );
+  z-index: 10;
+  inset: 2px;
+}
+
+.form_div {
+  width: 25%;
   height: 400px;
   min-width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_div > .form_div::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 400px;
+  top: -50%;
+  left: 35%;
+  transform-origin: bottom right;
+  background-color: black;
+  animation: rotate 3s infinite linear;
+}
+
+.main_div > .form_div::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 400px;
+  top: -50%;
+  left: 35%;
+  transform-origin: bottom right;
+  background-color: black;
+  animation: rotate 3s infinite linear;
+  animation-delay: -1.5s;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 
 /* Login div */
@@ -48,6 +97,10 @@
 
 .login_div > input[type="text"]:focus {
   outline: none;
+}
+
+.login_div > input:not(:placeholder-shown) + span {
+  transform: translateY(-120%);
 }
 
 /* Password #1 div */
@@ -88,6 +141,10 @@
   outline: none;
 }
 
+.password_one_div > input:not(:placeholder-shown) + span {
+  transform: translateY(-120%);
+}
+
 /* Password #2 div */
 
 .password_two_div {
@@ -126,6 +183,10 @@
   outline: none;
 }
 
+.password_two_div > input:not(:placeholder-shown) + span {
+  transform: translateY(-120%);
+}
+
 /* Button style */
 
 .register_button {
@@ -147,4 +208,19 @@
   transform: scale(1.05);
   cursor: pointer;
   background-position: left;
+}
+
+/* Error div */
+.error_message {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  bottom: 15%;
+  left: 17%;
+  border-radius: 5px;
+  background: var(--wrong-color-button);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -13,6 +13,11 @@ export default function Navigation() {
     showMenuFunction();
   }, [location]);
 
+  const logoutFunction = async () => {
+    context.dispatch({ type: "change-login-status" });
+    window.localStorage.removeItem("username");
+  };
+
   return (
     <nav
       className={`${styles.nav} ${
@@ -37,15 +42,30 @@ export default function Navigation() {
         <li>
           <Link to={"/"}>Strona główna</Link>
         </li>
-        <li>
-          <Link to={"/zaloguj"}>Zaloguj się</Link>
-        </li>
-        <li>
-          <Link to={"/zarejestruj"}>Zarejestruj się</Link>
-        </li>
-        <li>
-          <Link to={"/notatki"}>Twoje notatki</Link>
-        </li>
+        {context.state.login_status ? (
+          <>
+            <li>
+              <Link to={"/notatki"}>Twoje notatki</Link>
+            </li>
+            <li>
+              <Link to={"/dodajnotatki"}>Dodaj notatkę</Link>
+            </li>
+            <li>
+              <Link to={"/"} onClick={logoutFunction}>
+                Wyloguj się
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to={"/zaloguj"}>Zaloguj się</Link>
+            </li>
+            <li>
+              <Link to={"/zarejestruj"}>Zarejestruj się</Link>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );
