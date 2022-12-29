@@ -24,6 +24,6 @@ export const reducer = (state, action) => {
 
 export const initialState = {
   theme: `${styles.main_dark}`,
-  login_status: false,
+  login_status: Boolean(window.localStorage.getItem("username")),
   showMenu: false,
 };

@@ -11,7 +11,7 @@ export default function AddNote() {
     username: window.localStorage.getItem("username"),
     title: "",
     description: "",
-    status: true,
+    status: false,
   });
   const [status, setStatus] = useState(undefined);
 

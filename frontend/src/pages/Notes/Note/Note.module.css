@@ -30,13 +30,19 @@
   gap: 25%;
 }
 
-.buttons > .done_button {
+.done_button {
   background: var(--success-color-button);
   color: var(--main-text-color-light);
   width: 25%;
   height: 50%;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
+}
+
+.done_button:disabled {
+  background-color: #cccccc;
+  cursor: auto;
 }
 
 .delete_button {
@@ -46,6 +52,7 @@
   height: 50%;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1000px) {

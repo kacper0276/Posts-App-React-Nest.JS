@@ -1,21 +1,47 @@
 import styles from "./Notes.module.css";
 import UseWebsiteTitle from "../../hooks/UseWebsiteTitle";
 import Note from "./Note/Note";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { api_url } from "../../App";
 
 export default function Notes() {
   UseWebsiteTitle("Twoje notatki");
+  const [notes, setNotes] = useState([]);
+
+  const fetchData = async () => {
+    axios
+      .get(
+        `${api_url}/notes/getnotes/${window.localStorage.getItem("username")}`
+      )
+      .then((res) => {
+        setNotes(res.data.notes);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className={`${styles.main_div}`}>
       <h1>Twoje notatki: </h1>
-      <Note title={"Testowy tytuł"} description={"Testowy opis"} />
-      <Note title={"Testowy tytuł #2"} description={"Testowy opis #2"} />
-      <Note
-        title={"Testowy tytuł #3"}
-        description={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        }
-      />
+      {notes.length > 0 ? (
+        notes.map((note, key) => {
+          return (
+            <Note
+              key={key}
+              id={note.id}
+              fetch={fetchData}
+              title={note.title}
+              description={note.description}
+              status={note.status}
+            />
+          );
+        })
+      ) : (
+        <p>Nie masz notatek</p>
+      )}
     </div>
   );
 }
