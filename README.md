@@ -13,6 +13,3 @@ Project is created with:
 * React
 * Nest.JS
 * MySQL
-	
-## Setup
-To run this project, install it locally using npm:
